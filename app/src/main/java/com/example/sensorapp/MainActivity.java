@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         txt_compass = (TextView) findViewById(R.id.txt_azimuth);
 
         start();
-
     }
 
     @Override
