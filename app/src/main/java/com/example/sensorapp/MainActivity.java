@@ -46,35 +46,36 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         compass_img = (ImageView) findViewById(R.id.img_compass);
         txt_compass = (TextView) findViewById(R.id.txt_azimuth);
 
-        start();
+
+        buttonStop= (Button) findViewById(R.id.buttonStop);
 
         //listener for the button
-     //   buttonStop.setOnClickListener(new View.OnClickListener(){
-        //    public void onClick(View view) {
+        buttonStop.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
 
-            //    File root = android.os.Environment.getExternalStorageDirectory();
+                File root = android.os.Environment.getExternalStorageDirectory();
 
-              //  File dir = new File (root.getAbsolutePath() + "/download");
-             //   dir.mkdirs();
-            //    File file = new File(dir, "compassreading.txt");
+                File dir = new File (root.getAbsolutePath() + "/download");
+               dir.mkdirs();
+               File file = new File(dir, "compassreading.txt");
 
-            //    try {
-               //     FileOutputStream f = new FileOutputStream(file);
-                 //   PrintWriter pw = new PrintWriter(f);
+               try {
+                 FileOutputStream f = new FileOutputStream(file);
+                    PrintWriter pw = new PrintWriter(f);
                   //  f.write(txt_compass.getBytes());
-                //    f.write("hello".getBytes());
-              //      f.close();
-            //    } catch (FileNotFoundException e) {
-          //          e.printStackTrace();
+                    f.write("hello".getBytes());
+                    f.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
 
-          //      } catch (IOException e) {
-         //           e.printStackTrace();
-         //       }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
-        //    }
+            }
 
-      //  });
-
+        });
+        start();
 
     }
     @Override
