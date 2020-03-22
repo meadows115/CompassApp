@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                try {
                  FileOutputStream f = new FileOutputStream(file);
                     PrintWriter pw = new PrintWriter(f);
-                  //  f.write(txt_compass.getBytes());
-                    f.write("hello".getBytes());
+                   String text = txt_compass.getText().toString();
+                   f.write(text.getBytes());
                     f.close();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
