@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                    String text = txt_compass.getText().toString();
                    f.write(text.getBytes());
                     f.close();
+                   Toast.makeText(getApplicationContext(), "Compass Reading Saved in Txt File",Toast.LENGTH_LONG ).show();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
 
