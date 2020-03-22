@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                File file = new File(dir, "compassreading.txt");
 
                try {
-                 FileOutputStream f = new FileOutputStream(file);
+                 FileOutputStream f = new FileOutputStream(file, true);
                     PrintWriter pw = new PrintWriter(f);
-                   String text = txt_compass.getText().toString();
+                   String text = txt_compass.getText().toString() + "\n";
                    f.write(text.getBytes());
                     f.close();
                    Toast.makeText(getApplicationContext(), "Compass Reading Saved in Txt File",Toast.LENGTH_LONG ).show();
