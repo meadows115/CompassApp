@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="677dp"
         android:text="0°"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="40sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal" />
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/img_compass"
@@ -25,6 +25,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_azimuth"
         android:src="@drawable/compass"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="595dp"
+        android:layout_marginBottom="88dp"
+        android:text="Save Current Reading"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

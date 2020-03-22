@@ -9,8 +9,16 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -27,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private boolean mLastAccelerometerSet = false;
     private boolean mLastMagnetometerSet = false;
 
+    Button buttonStop;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +47,36 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         txt_compass = (TextView) findViewById(R.id.txt_azimuth);
 
         start();
-    }
 
+        //listener for the button
+     //   buttonStop.setOnClickListener(new View.OnClickListener(){
+        //    public void onClick(View view) {
+
+            //    File root = android.os.Environment.getExternalStorageDirectory();
+
+              //  File dir = new File (root.getAbsolutePath() + "/download");
+             //   dir.mkdirs();
+            //    File file = new File(dir, "compassreading.txt");
+
+            //    try {
+               //     FileOutputStream f = new FileOutputStream(file);
+                 //   PrintWriter pw = new PrintWriter(f);
+                  //  f.write(txt_compass.getBytes());
+                //    f.write("hello".getBytes());
+              //      f.close();
+            //    } catch (FileNotFoundException e) {
+          //          e.printStackTrace();
+
+          //      } catch (IOException e) {
+         //           e.printStackTrace();
+         //       }
+
+        //    }
+
+      //  });
+
+
+    }
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_ROTATION_VECTOR) {
@@ -82,7 +120,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             where = "NE";
 
         txt_compass.setText(mAzimuth + "° " + where);
+
     }
+
+
+
 
 
     @Override
